@@ -3,10 +3,10 @@
 x = 3;
 y = 4;
 
-if (x + y >10){
+if (x > 10 && y >10){
     console.log("Both numbers are greater than 10")
 }
-else if (x && y < 10){
+else if (x < 10 && y <10){
     console.log("At least one number is not greater than 10")
 }
 
