@@ -89,7 +89,7 @@ else{
 //print "The number is even and between 0 and 100". Otherwise, print "The number is not even and/or not between 0 and 100".
 x = 34;
 
-if ( 0 <= x <= 100 && x % 2 == 0){
+if ( 0 <= x && x<= 100 && x % 2 == 0){
     console.log("The number is even and between 0 and 100")
 }
 else{
