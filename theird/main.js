@@ -31,13 +31,13 @@ for (let i = 1; i < 11; i++) {
 }
 // 5- Write a program that calculates the sum of numbers from 1 to 100 using a while loop.
 console.log("qustion five");
-// var i = 0;
-// var sum = 0;
-// while ( i < 100) {
-//   i += 1
-//   sum += i;
-// }
-// console.log(sum);
+var i = 0;
+var sum = 0;
+while ( i < 100) {
+  i += 1
+  sum += i;
+}
+console.log(sum);
 // 6- Write a program that calculates the factorial of a number entered by the user using a for loop.
 console.log("qustion six");
 let numberUser = Number(prompt("Pleas Eenter a number"));
