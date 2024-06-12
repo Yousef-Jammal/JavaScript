@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task4</title>
+    <style>
+      .all {
+        background-color: rgb(160, 208, 234);
+        width: 360px;
+        height: 70vh;
+        border-radius: 10px;
+        position: absolute;
+        right: 37vw;
+        top: 10vh;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto auto auto auto auto;
+      }
+      .all > div {
+        background-color: rgb(239, 239, 239);
+        margin: 13px;
+        box-shadow: 0 4px 0 rgb(128, 166, 187);
+        text-align: center;
+        font-size: 25px;
+        padding-top: 25px;
+      }
+      #aAll {
+        grid-column-start: 1;
+        grid-column-end: 5;
+        background-color: rgb(241, 251, 235);
+      }
+      #a11,
+      #a10,
+      #a12,
+      #a16 {
+        background-color: rgb(239, 255, 147);
+      }
+      #a14 {
+        background-color: rgb(253, 159, 169);
+      }
+      .all>div:hover{
+        background-color: rgba(0, 0, 24, 0.159) !important;
+      }
+      .all>#aAll:hover{
+        background-color: rgb(241, 251, 235) !important;
+      }
+    </style>
+  </head>
+  <body style="background-color: rgb(168, 191, 126); position: relative">
+    <div class="all">
+      <div id="aAll"></div>
+      <div id="a1" onclick="click1()">1</div>
+      <div id="a2" onclick="click2()">2</div>
+      <div id="a3" onclick="click3()">3</div>
+      <div id="a10" onclick="click10()">+</div>
+      <div id="a4" onclick="click4()">4</div>
+      <div id="a5" onclick="click5()">5</div>
+      <div id="a6" onclick="click6()">6</div>
+      <div id="a11" onclick="click11()">-</div>
+      <div id="a7" onclick="click7()">7</div>
+      <div id="a8" onclick="click8()">8</div>
+      <div id="a9" onclick="click9()">9</div>
+      <div id="a12" onclick="click12()">*</div>
+      <div id="a13" onclick="click13()">c</div>
+      <div id="a14" onclick="click14()">0</div>
+      <div id="a15" onclick="click15()">=</div>
+      <div id="a16" onclick="click16()">/</div>
+    </div>
+
+    <script>
+      let secren = document.getElementById("aAll");
+      // number
+      let zero = document.getElementById("a14").value;
+      let one1 = document.getElementById("a1").value;
+      let tow2 = document.getElementById("a2").value;
+      let three3 = document.getElementById("a3").value;
+      let four4 = document.getElementById("a4").value;
+      let five5 = document.getElementById("a5").value;
+      let six6 = document.getElementById("a6").value;
+      let seven7 = document.getElementById("a7").value;
+      let eight8 = document.getElementById("a8").value;
+      let nine9 = document.getElementById("a9").value;
+      // calc
+      let plus = document.getElementById("a10").value;
+      let minis = document.getElementById("a11").value;
+      let hit = document.getElementById("a12").value;
+      let portion = document.getElementById("a16").value;
+      let equal = document.getElementById("a15").value;
+      let clear = document.getElementById("a13").value;
+      
+      function click1(){
+        secren.textContent += '1' ;
+      }
+      function click2(){
+        secren.textContent += '2' ;
+      }
+      function click3(){
+        secren.textContent += '3' ;
+      }
+      function click4(){
+        secren.textContent += '4' ;
+      }
+      function click5(){
+        secren.textContent += '5' ;
+      }
+      function click6(){
+        secren.textContent += '6' ;
+      }
+      function click7(){
+        secren.textContent += '7' ;
+      }
+      function click8(){
+        secren.textContent += '8' ;
+      }
+      function click9(){
+        secren.textContent += '9' ;
+      }
+      function click10(){
+        secren.textContent += '+' ;
+      }
+      function click11(){
+        secren.textContent += '-' ;
+      }
+      function click12(){
+        secren.textContent += '*' ;
+      }
+      function click13(){
+        secren.textContent = "" ;
+      }
+      function click14(){
+        secren.textContent += '0' ;
+      }
+      function click15(){
+        console.log(eval(secren.textContent))
+      }
+      function click16(){
+        secren.textContent += '/' ;
+      }
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        background-color: rgb(237, 237, 237);
+        position: relative;
+      }
+      #perent {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      #perent > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 280px;
+        width: 21%;
+      }
+      #perent > div > img {
+        width: 100%;
+        height: 70%;
+        /* border: 10px solid black; */
+      }
+      #perent > div > div {
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+      }
+      #perent > div > button {
+        background-color: blue;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        width: 120px;
+        height: 40px;
+        border: none;
+      }
+      #perent > div > button:hover {
+        cursor: pointer;
+      }
+      /* ------ center ------ */
+      #bag {
+        margin: 120px 5%;
+        width: 90%;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* background-color: red; */
+      }
+      #bag img {
+        width: 120px;
+        height: 120px;
+      }
+      #bag #center {
+        /* background-color: blue; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 150px;
+        height: 40px;
+      }
+      #bag > #center > #minus,
+      #plus {
+        background-color: white;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        font-weight: bolder;
+        border: 1px solid rgba(0, 0, 0, 0.271);
+      }
+      #bag > #center > #minus,
+      #plus:hover {
+        cursor: pointer;
+      }
+      #bag > #center > #numberOfThink {
+        background-color: black;
+        color: white;
+        width: 30px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        font-weight: bolder;
+      }
+      #bag > #price {
+        font-size: x-large;
+      }
+      #bag > #delete {
+        font-size: x-large;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        background-color: black;
+        color: white;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+      }
+      #bag > #delete:hover {
+        cursor: pointer;
+      }
+      /* -------- end -------- */
+      #endSection {
+        position: absolute;
+        right: 15vw;
+        padding: 0 3vh 10vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 200px;
+      }
+      #endSection #totlePrice {
+        color: rgba(25, 25, 255, 0.889);
+      }
+      #endSection > #save {
+        width: 80px;
+        height: 30px;
+        background-color: rgba(56, 56, 254, 0.852);
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+      }
+      #endSection > #save:hover {
+        cursor: pointer;
+      }
+      #Item {
+        /* background-color: red; */
+        width: 100%;
+        height: auto;
+      }
+
+      /* js */
+      #creatIphone,
+      #creatHeadphone,
+      #creatKeybord {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- start top -->
+    <div id="perent">
+      <div id="iPhone">
+        <img src="iPhone.png" alt="" />
+        <div>
+          <p>ihpone 12 pro</p>
+          <h4>900jd</h4>
+        </div>
+        <button id="buttonIphonCreat" onclick="creatIphoneItme()">
+          add to cart
+        </button>
+      </div>
+
+      <div id="headPhone">
+        <img src="headPhone.png" alt="" />
+        <div>
+          <p>headphone</p>
+          <h4>150jd</h4>
+        </div>
+        <button id="buttonHeadphoneCreat" onclick="creatHeadPhoneItem()">
+          add to cart
+        </button>
+      </div>
+
+      <div id="keyBord">
+        <img src="keyBord.png" alt="" />
+        <div>
+          <p>keybord</p>
+          <h4>60jd</h4>
+        </div>
+        <button id="buttonKeybordCreat" onclick="creatKeyBordItem()">
+          add to cart
+        </button>
+      </div>
+    </div>
+    <!-- end top -->
+    <!-- iPhone -->
+    <div id="Item">
+      <div id="creatIphone">
+        <div id="bag">
+          <img src="iPhone.png" alt="" />
+          <div id="center">
+            <button id="minus" onclick="minusIPhone()">-</button>
+            <div id="numberOfThinkIPhone"></div>
+            <button id="plus" onclick="creatIphoneItme()">+</button>
+          </div>
+          <p id="iPhonePrice"></p>
+          <button id="deleteIPhoneItem" onclick="deleteIphoneItme()">x</button>
+        </div>
+      </div>
+      <!-- headphone -->
+      <div id="creatHeadphone">
+        <div id="bag">
+          <img src="headPhone.png" alt="" />
+          <div id="center">
+            <button id="minus" onclick="minusHeadPhone()">-</button>
+            <div id="numberOfThinkHeadPhone"></div>
+            <button id="plus" onclick="creatHeadPhoneItem()">+</button>
+          </div>
+          <p id="HeadPhonePrice"></p>
+          <button id="deleteHeadPhoneItem" onclick="deleteHeadPhoneItem()">
+            x
+          </button>
+        </div>
+      </div>
+      <!-- keybord -->
+      <div id="creatKeybord">
+        <div id="bag">
+          <img src="keyBord.png" alt="" />
+          <div id="center">
+            <button id="minus" onclick="creatKeyBordItem()" >-</button>
+            <div id="numberOfThinkKeybord"></div>
+            <button id="plus" onclick="creatKeyBordItem()">+</button>
+          </div>
+          <p id="KeybordPrice"></p>
+          <button id="deleteKeyBordItem" onclick="deleteKeyBordItem()">
+            x
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- end middle -->
+    <div id="endSection">
+      <div id="totalSection">
+        <h1>total</h1>
+        <h2 id="totlePrice"></h2>
+      </div>
+      <button id="save">save</button>
+    </div>
+
+    <script>
+      // price
+      let iPhonePrice = 900;
+      let headPhonePrice = 150;
+      let KeybordPhone = 60;
+      // Number of iPhone
+      let iPhoneNumbers = 0;
+      let HeadPhoneNumbers = 0;
+      let KeyBordNumbers = 0;
+
+      let sumPrice = iPhoneNumbers*iPhonePrice + HeadPhoneNumbers*headPhonePrice + KeyBordNumbers*KeybordPhone;
+
+
+      // creat item
+      function creatIphoneItme() {
+        iPhoneNumbers++;
+        document.getElementById("creatIphone").style.display = "inline";
+        document.getElementById("iPhonePrice").textContent = `${iPhoneNumbers*iPhonePrice}jd`;
+        document.getElementById("numberOfThinkIPhone").textContent = iPhoneNumbers
+        let sumPrice = iPhoneNumbers*iPhonePrice + HeadPhoneNumbers*headPhonePrice + KeyBordNumbers*KeybordPhone;
+        document.getElementById("totlePrice").textContent = sumPrice;
+      }
+      function creatHeadPhoneItem() {
+        HeadPhoneNumbers++;
+        document.getElementById("creatHeadphone").style.display = "inline";
+        document.getElementById("HeadPhonePrice").textContent = `${HeadPhoneNumbers*headPhonePrice}jd`;
+        document.getElementById("numberOfThinkHeadPhone").textContent = HeadPhoneNumbers
+        let sumPrice = iPhoneNumbers*iPhonePrice + HeadPhoneNumbers*headPhonePrice + KeyBordNumbers*KeybordPhone;
+        document.getElementById("totlePrice").textContent = sumPrice;
+      }
+      function creatKeyBordItem() {
+        KeyBordNumbers++;
+        document.getElementById("creatKeybord").style.display = "inline";
+        document.getElementById("KeybordPrice").textContent = `${KeyBordNumbers*KeybordPhone}jd`;
+        document.getElementById("numberOfThinkKeybord").textContent = KeyBordNumbers
+        let sumPrice = iPhoneNumbers*iPhonePrice + HeadPhoneNumbers*headPhonePrice + KeyBordNumbers*KeybordPhone;
+        document.getElementById("totlePrice").textContent = sumPrice;
+      }
+
+      // minus of price or number of item
+      function minusIPhone() {
+        iPhoneNumbers--;
+        document.getElementById("creatIphone").style.display = "inline";
+        document.getElementById("iPhonePrice").textContent = `${iPhoneNumbers*iPhonePrice}jd`;
+        if (iPhoneNumbers == 0){
+            document.getElementById("creatIphone").style.display = "none";
+        }
+        let sumPrice = iPhoneNumbers*iPhonePrice + HeadPhoneNumbers*headPhonePrice + KeyBordNumbers*KeybordPhone;
+        document.getElementById("totlePrice").textContent = sumPrice;
+      }
+      function minusHeadPhone() {
+        HeadPhoneNumbers--;
+        document.getElementById("creatHeadphone").style.display = "inline";
+        document.getElementById("HeadPhonePrice").textContent = `${HeadPhoneNumbers*headPhonePrice}jd`;
+        if (HeadPhoneNumbers == 0){
+            document.getElementById("creatHeadphone").style.display = "none";
+        }
+        let sumPrice = iPhoneNumbers*iPhonePrice + HeadPhoneNumbers*headPhonePrice + KeyBordNumbers*KeybordPhone;
+        document.getElementById("totlePrice").textContent = sumPrice;
+      }
+      function minusKeyBord() {
+        KeyBordNumbers--;
+        document.getElementById("creatKeybord").style.display = "inline";
+        document.getElementById("KeybordPrice").textContent = `${KeyBordNumbers*KeybordPhone}jd`;
+        if (KeyBordNumbers == 0 ){
+            document.getElementById("creatKeybord").style.display = "none";
+        }
+        let sumPrice = iPhoneNumbers*iPhonePrice + HeadPhoneNumbers*headPhonePrice + KeyBordNumbers*KeybordPhone;
+        document.getElementById("totlePrice").textContent = sumPrice;
+      }
+
+      // delete item
+      function deleteIphoneItme() {
+        document.getElementById("creatIphone").style.display = "none";
+        let sumPrice = iPhoneNumbers*iPhonePrice + HeadPhoneNumbers*headPhonePrice + KeyBordNumbers*KeybordPhone;    
+        document.getElementById("totlePrice").textContent = sumPrice;
+      }
+      function deleteHeadPhoneItem() {
+        document.getElementById("creatHeadphone").style.display = "none";
+        let sumPrice = iPhoneNumbers*iPhonePrice + HeadPhoneNumbers*headPhonePrice + KeyBordNumbers*KeybordPhone;    
+        document.getElementById("totlePrice").textContent = sumPrice;
+      }
+      function deleteKeyBordItem() {
+        document.getElementById("creatKeybord").style.display = "none";
+        let sumPrice = iPhoneNumbers*iPhonePrice + HeadPhoneNumbers*headPhonePrice + KeyBordNumbers*KeybordPhone;    
+        document.getElementById("totlePrice").textContent = sumPrice;
+      }
+
+
+    </script>
+  </body>
+</html>
