@@ -1,16 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AJAX</title>
-</head>
-<body>
-    <p>Suggestions: <span id="txtHint"></span></p> 
-    <p>First name: <input type="text" id="txt1" onkeyup="showHint(this.value)"></p>
-    
+    <style>
+        #hi{
+            display: flex;
+            align-items: center;
+        }
+        #mydiv2{
+            color: blue;
+        }
+    </style>
+  </head>
+  <body>
+      <div id="hi">
+          <p>First name: <input type="text" id="txt1" onkeyup="showHint(this.value)"></p>
+          <button onclick="submit()">submit</button>
+      </div>
+      <p>Suggestions: <span id="txtHint"></span></p> 
+
+      <div id="mydiv2"></div>
+
     <script>
-    
+      function showHint(str) {
+        if (str.length == 0) {
+          document.getElementById("txtHint").innerHTML = "";
+          return;
+        }
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+          document.getElementById("txtHint").innerHTML =
+            document.getElementById("txt1").value;
+          localStorage.setItem(content, document.getElementById("txt1").value)
+        };
+        xhttp.open("GET", "gethint.php?q=" + str);
+        xhttp.send();
+      }
     </script>
-</body>
+  </body>
 </html>
