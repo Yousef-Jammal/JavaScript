@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style></style>
+  </head>
+  <body>
+    <input type="text" id="input" />
+    <button onclick="yousef()">submit</button>
+
+    <img src="" />
+
+    <script>
+            async function yousef() {
+              let search = document.getElementById("input").value;
+              
+              let api = await fetch(`https://pokeapi.co/api/v2/pokemon-form/${search}`); //https://pokeapi.co/api/v2/pokemon/pikachu
+              
+              console.log(api + ' the api')
+              
+              let Json = await api.json();
+
+              console.log(Json + ' the json')
+              
+              let theTemp = Json.sprites.front_default; 
+
+              console.log(theTemp + ' the theTemp');
+
+              document.querySelector("img").src = theTemp;
+            }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      #content {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        margin: 2vh 2vw;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="input" />
+    <button onclick="yousef()">submit</button>
+
+    <div id="content">
+      <div>
+        <img src="" />
+        <p></p>
+      </div>
+    </div>
+
+    <script>
+      async function yousef() {
+        let content = document.getElementById("content");
+        let search = document.getElementById("input").value;
+
+        let api = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${search}&key=AIzaSyCvVaAIAvqcPIJ5kKtwYQEffJBZ_IUk7OA`);
+
+        let Json = await api.json();
+        let theTemp = Json.items[0].snippet.thumbnails.medium.url;
+        let thetit = Json.items[0].snippet.channelTitle;
+
+        console.log(theTemp);
+
+        document.querySelector("img").src = theTemp;
+        document.querySelector("p").textContent = thetit;
+      }
+    </script>
+  </body>
+</html>
