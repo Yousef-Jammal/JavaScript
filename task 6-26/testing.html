@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="testing.css" />
+  </head>
+  <body>
+    <h1>CRUD Application With Local Storage</h1>
+
+    <div id="up">
+      <label for="inputName">Name</label>
+      <input type="text" id="inputName" placeholder="Please enter your name" />
+
+      <label for="inputAge">Age</label>
+      <input type="number" id="inputAge" placeholder="Please enter your name" />
+
+      <label for="inputAddress">Address</label>
+      <input
+        type="text"
+        id="inputAddress"
+        placeholder="Please enter your name"
+      />
+
+      <label for="inputEmail">Email</label>
+      <input
+        type="email"
+        id="inputEmail"
+        placeholder="Please enter your name"
+      />
+
+      <button id="creatBtn">Creat</button>
+      <button id="updateBtn" onclick="update()">Update</button>
+    </div>
+    <hr style="margin: 3vh 0" />
+
+    <div style="display: flex; justify-content: center">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <script src="testing.js"></script>
+  </body>
+</html>
